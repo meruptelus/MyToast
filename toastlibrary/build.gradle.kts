@@ -54,6 +54,19 @@ android {
 
     }
 }
+publishing {
+    publications {
+        register<MavenPublication>("release") {
+            groupId = "com.github.meruptelus"
+            artifactId = "MyToast"
+            version = "1.0.2"
+
+            afterEvaluate {
+                from(components["release"])
+            }
+        }
+    }
+}
 
 //publishing {
 //    publications {
